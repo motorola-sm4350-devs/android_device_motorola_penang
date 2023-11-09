@@ -133,4 +133,12 @@ $(EXPAT_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(EXPAT_SYMLINKS)
 
+NQ_NFC_SYMLINKS := $(TARGET_OUT_SYSTEM_EXT)/app/NQNfcNci/lib/arm64
+$(NQ_NFC_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating NQNfcNci symlinks: $@"
+	@mkdir -p $@
+	$(hide) ln -sf /system_ext/lib64/libsn100nfc_nci_jni.so $@/libsn100nfc_nci_jni.so
+
+ALL_DEFAULT_INSTALLED_MODULES += $(NQ_NFC_SYMLINKS)
+
 endif

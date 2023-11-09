@@ -64,6 +64,9 @@ function blob_fixup() {
         vendor/etc/vintf/manifest/vendor.dolby.media.c2@1.0-service.xml)
             sed -ni '/default1/!p' "${2}"
             ;;
+        vendor/bin/hw/vendor.nxp.hardware.nfc@2.0-service)
+            ${PATCHELF} --remove-needed "nfc_nci.nqx.default.hw.so" "${2}"
+            ;;
     esac
 }
 
