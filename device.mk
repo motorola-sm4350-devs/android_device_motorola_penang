@@ -622,8 +622,8 @@ PRODUCT_BOOT_JARS += \
     WfdCommon
 
 # Moto Action
-PRODUCT_PACKAGES += \
-    MotoActions
+#PRODUCT_PACKAGES += \
+#    MotoActions
 
 # Gapps
 ifeq ($(WITH_GMS),true)
